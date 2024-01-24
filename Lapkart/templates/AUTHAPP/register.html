@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+    <style>
+        .ul_navbar{
+        background-color:Azure;
+        list-style-type:none;
+        margin=0;
+        padding=0;
+        overflow:hidden;
+        }
+        li{
+        float:left;
+        }
+        li a
+        {
+        display:block;
+        text-decoration:none;
+        padding:15px 15px 15px 15px;
+        }
+        li a:hover
+        {
+        background-color:Orange;
+        }
+        body{
+        background-image: url("https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+    </style>
+</head>
+<body style="background-color:plum">
+<header style="background-color:black; text-align:center;color:white">
+    <h1>Lapkart</h1>
+</header>
+<ul class="ul_navbar" style="margin-top:-1%">
+
+    <li><a href="/auth/home/">Home</a></li>
+    <li><a href="/seller/show/">Show Laptops</a></li>
+
+    {% if user.is_authenticated %}
+    <li><a>Hello, {{user.username}}</a></li>
+    <li><a href="/auth/logout/">Logout</a></li>
+    {% else %}
+    <li><a href="/auth/login/">Login</a></li>
+    <li><a href="/auth/register/">Register</a></li>
+    {% endif %}
+</ul><br>
+<h1 style="text-align:center;color:white;">REGISTER FORM</h1>
+<form method="post" style="border:2px double;background-color:	rgb(168,168,168); width:53%;padding-top:2%;padding-left:5%;padding-bottom:2%;margin-left:25%">
+    {% csrf_token %}
+    {{ signup_form.as_p}}
+    <input type="submit" value="Register" class="btn btn-primary" style="text-align:center">
+</form><br><br><br><br><br><br><br><br><br><br>
+<footer style="text-align:center;background-color:grey;color-white;padding;10px 15px 15px 15px;margin-down:25%;">
+    <p>Copyright, Lapkart Pvt.Ltd</p>
+</footer>
+</body>
+</html>

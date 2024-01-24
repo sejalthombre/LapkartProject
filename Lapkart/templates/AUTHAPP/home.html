@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ALL LAPTOPS</title>
+    <style>
+        .ul_navbar{
+        background-color:Azure;
+        list-style-type:none;
+        margin-top=-2;
+        padding=0;
+        overflow:hidden;
+        }
+        li{
+        float:left;
+        }
+        li a
+        {
+        display:block;
+        text-decoration:none;
+        padding:15px 15px 15px 15px;
+        }
+        li a:hover
+        {
+        background-color:Orange;
+        }
+        body{
+        background-image: url("https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+    </style>
+</head>
+<body style="background-color:blue;">
+<header style="background-color:Black; text-align:center;color:white">
+    <h1>Lapkart</h1>
+</header>
+<ul class="ul_navbar" style="margin-top:-1%;">
+   <li><a href="/auth/home/">Home</a></li>
+    <li><a href="/seller/show/">Show Laptops</a></li>
+    {% if user.is_authenticated %}
+    <li><a>Hello, {{user.username}}</a></li>
+    <li><a href="/auth/logout/">Logout</a></li>
+    {% else %}
+    <li><a href="/auth/login/">Login</a></li>
+    <li><a href="/auth/register/">Register</a></li>
+    {% endif %}
+</ul>
+<h1 style="text-align:center;color:white">Laptops</h1>
+
+<img src="https://m.media-amazon.com/images/I/71lYhcc++AL._SX679_.jpg" alt="HP" style="width:20%; height:20%;margin-left:5%;margin-right:5%;">HP</a>
+<p style="border:5px double;border-size:30%;margin-left:40%; margin-top:-15%;height:50%;width:50%;background-color:white;padding-top:2%;padding-bottom:2%;padding-left:2%;padding-right:2%;">Designed with colors to match your vibe, the bold and youthful Vivobook series lets you show who you really are. They're the best laptops for getting the job done, with the best performance, and innovative features that boost productivity and give you the best user experience.
+</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlz4tFu6eDJtc-hEtdqsqxHVBECjVUcy2oNA&usqp=CAU" alt="HP" style="width:30%; height:30%;margin-left:65%;padding-top:10%;margin-top:1%">
+<p style="border:5px double;border-size:30%;margin-right:40%; margin-top:-15%;height:50%;width:50%;background-color:white;padding-top:2%;padding-bottom:2%;padding-left:2%;padding-right:2%;">The laptop computers are made for increasing the convenience of users. They can be used in travelling for business purposes.The leptop computer is a portable equipment. The laptop computers are portable due to light weight. They have many features when they are compared with desktop computers. Laptop computers are operated using built in batteries. These batteries are made for long life. The laptop computer has a built in touch pad so that it can be operated without a mouse. The key board and monitor has also been built in so that the equipment facilitates all functions.</p>
+<br><br><br><br><br><br><br>
+<footer style="text-align:center;background-color:grey;color-white;padding;10px 15px 15px 15px;">
+    <p>Copyright, Lapkart Pvt.Ltd</p>
+</footer>
+</body>
+</html>
